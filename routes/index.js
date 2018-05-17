@@ -1,5 +1,7 @@
 var express = require('express');
 var router = express.Router();
+//load controller code dealing with database mongodb and Routes collection
+var controllerMongoCollection = require('../controllers/database');
 
 //to process data sent in on request need body-parser module
 var bodyParser = require('body-parser');
