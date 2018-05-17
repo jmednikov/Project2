@@ -1,5 +1,5 @@
 var mongodb = require('mongodb');
-var mongoDBURI = 'mongodb://heroku_x8ctph3l:heroku_x8ctph3l@ds247619.mlab.com:47619/heroku_x8ctph3l';
+var mongoDBURI = 'mongodb://jmednikov:Boom1234.@ds247619.mlab.com:47619/heroku_x8ctph3l';
 
 module.exports.getAllOrders = function(req, res) {
     mongodb.MongoClient.connect(mongoDBURI, function(err, client) {
