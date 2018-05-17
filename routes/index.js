@@ -14,5 +14,10 @@ router.post('/storeData', function(req, res,next) {
     var value_name = req.body.order;
     res.send("order successfully received: " + value_name);
 });
+// Our getAllOrders GET endpoint (for testing)
+router.get('/getAllOrders', controllerMongoCollection.getAllOrders);
+
+// Our getAllOrders POST endpoint
+router.post('/getAllOrders', controllerMongoCollection.getAllOrders);
 
 module.exports = router;
