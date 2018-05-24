@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+
 //load controller code dealing with database mongodb and Routes collection
 var controllerMongoCollection = require('../controllers/database');
 
@@ -11,11 +12,9 @@ var querystring = require('querystring'); //for use in GET Query string of form 
 router.use(bodyParser.json()); // for parsing application/json
 router.use(bodyParser.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencode
 
-// Our storeData POST endpoint to echo the order data received
-router.post('/storeData', function(req, res,next) {
-    var value_name = req.body.order;
-    res.send("order successfully received: " + value_name);
-});
+// Our storeData POST endpoint to save the data from the order
+router.post('/storeData', controllerMongoCollection.storeData);
+
 // Our getAllOrders GET endpoint (for testing)
 router.get('/getAllOrders', controllerMongoCollection.getAllOrders);
 
